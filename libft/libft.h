@@ -6,7 +6,7 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:42:00 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/18 15:25:50 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/19 21:55:56 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,7 @@ int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 size_t	ft_strlen(const char *s);
+void	*ft_memset(void *b, int c, size_t len);
+void	ft_bzero(void *s, size_t n);
 
 #endif

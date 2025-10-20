@@ -6,8 +6,21 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:41:12 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/19 08:58:10 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/20 13:05:12 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void *ft_memset(void *b, int c, size_t len)
+{
+	size_t i;
+
+	i = 0;
+	while (i != len)
+	{
+		*(char *)(b + i) = (char)c;
+		i++;
+	}
+	return (b);
+}
