@@ -1,21 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 11:27:12 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/20 20:00:09 by molahrac         ###   ########.fr       */
+/*   Created: 2025/10/20 18:33:10 by molahrac          #+#    #+#             */
+/*   Updated: 2025/10/20 20:12:51 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Checks if 'c' is an alphabetic character (uppercase or lowercase) */
-int	ft_isalpha(int c)
+/**
+ * Copies 'src' into 'dst', limited to 'dstsize - 1' characters, 
+ * adds '\0', and returns 'src' length
+ */
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	if ((c >= 65 && c <= 90) || ((c >= 97 && c <= 122)))
-		return (1);
-	return (0);
+	size_t		srclen;
+	size_t		i;
+
+	srclen = ft_strlen(src);
+	if (dstsize == 0)
+		return (srclen);
+	i = 0;
+	while (i != (dstsize - 1) && *(src + i) != '\0')
+	{
+		*(dst + i) = *(src + i);
+		i++;
+	}
+	*(dst + i) = '\0';
+	return (srclen);
 }
