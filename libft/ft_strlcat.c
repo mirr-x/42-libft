@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 #include "libft.h"
 
 /**
@@ -27,27 +25,18 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	empty_dst_space;
 	size_t	total_size;
 
-	i = 0;
 	lensrc = ft_strlen(src);
 	lendst = ft_strlen(dst);
-	if (dstsize == 0)
-		return (lensrc);
+	if (dstsize <= lendst)
+		return (dstsize + lensrc);
 	total_size = lensrc + lendst;
-	empty_dst_space = dstsize - lendst;
-	if (lensrc > empty_dst_space)
-		return (total_size);
-	while (i != lensrc)
+	empty_dst_space = dstsize - lendst - 1;
+	i = 0;
+	while (i < empty_dst_space && src[i] != '\0')
 	{
-		dst[lendst++] = src[i++];
+		dst[lendst + i] = src[i];
+		i++;
 	}
+	dst[lendst + i] = '\0';
 	return (total_size);
-}
-
-#include <stdio.h>
-int main(void)
-{
-	char dest[11] = "a";
-	printf("%zu\n",ft_strlcat(dest, "lorem", 15));
-	printf("%s\n", dest);
-
 }
