@@ -6,7 +6,7 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 20:31:13 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/21 11:59:20 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/21 13:37:26 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /**
  * Adds 'src' to the end of 'dst',
  * but makes sure 'dst' is not longer than 'dstsize - 1'.
- *  Returns the total size it wanted to make
+ *  Returns the total size it wanted to make !!hr
  */
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

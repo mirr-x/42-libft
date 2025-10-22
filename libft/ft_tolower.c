@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/18 15:41:12 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/21 19:28:56 by molahrac         ###   ########.fr       */
+/*   Created: 2025/10/21 13:38:08 by molahrac          #+#    #+#             */
+/*   Updated: 2025/10/21 13:40:03 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Fills the first 'len' bytes of memory at 'b' with the value 'c' */
-void	*ft_memset(void *b, int c, size_t len)
+int	ft_tolower(int c)
 {
-	size_t		i;
-
-	i = 0;
-	while (i != len)
-	{
-		*(char *)(b + i) = (unsigned char)c;
-		i++;
-	}
-	return (b);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }

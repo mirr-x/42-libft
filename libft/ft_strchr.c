@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/18 15:41:12 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/21 19:28:56 by molahrac         ###   ########.fr       */
+/*   Created: 2025/10/21 13:41:11 by molahrac          #+#    #+#             */
+/*   Updated: 2025/10/21 19:47:47 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Fills the first 'len' bytes of memory at 'b' with the value 'c' */
-void	*ft_memset(void *b, int c, size_t len)
+/**
+ * Finds the first 'c' in the string 's', including '\0'.
+ * we have (const char *s)  we cant change it
+ * so what we did is recast it to (char *s) in return val
+ */
+char	*ft_strchr(const char *s, int c)
 {
-	size_t		i;
-
-	i = 0;
-	while (i != len)
+	c = (unsigned char)c;
+	while (*s != '\0')
 	{
-		*(char *)(b + i) = (unsigned char)c;
-		i++;
+		if (*s == c)
+			return ((char *)s);
+		s++;
 	}
-	return (b);
+	if (c == '\0')
+		return ((char *)s);
+	return (NULL);
 }

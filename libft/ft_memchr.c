@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/18 15:41:12 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/21 19:28:56 by molahrac         ###   ########.fr       */
+/*   Created: 2025/10/21 23:24:09 by molahrac          #+#    #+#             */
+/*   Updated: 2025/10/21 23:48:27 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Fills the first 'len' bytes of memory at 'b' with the value 'c' */
-void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t		i;
+	size_t	i;
 
 	i = 0;
-	while (i != len)
+	while (i != n)
 	{
-		*(char *)(b + i) = (unsigned char)c;
+		if (*(unsigned char *)(s + i) == (unsigned char)c)
+			return ((unsigned char *)(s + i));
 		i++;
 	}
-	return (b);
+	return (NULL);
 }

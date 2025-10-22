@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/18 15:41:12 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/21 19:28:56 by molahrac         ###   ########.fr       */
+/*   Created: 2025/10/21 23:55:08 by molahrac          #+#    #+#             */
+/*   Updated: 2025/10/22 00:41:51 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Fills the first 'len' bytes of memory at 'b' with the value 'c' */
-void	*ft_memset(void *b, int c, size_t len)
+int	memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t		i;
+	size_t	i;
+	char	*p1;
+	char	*p2;
 
 	i = 0;
-	while (i != len)
+	p1 = (unsigned char *)s1;
+	p2 = (unsigned char *)p2;
+	while (i < n && *p1 != '\0' && *p2 != '\0' && *p1 == *p2)
 	{
-		*(char *)(b + i) = (unsigned char)c;
 		i++;
+		p1++;
+		p2++;
 	}
-	return (b);
+	if (n == i)
+		return (0);
+	return (*p1 - *p2);
 }

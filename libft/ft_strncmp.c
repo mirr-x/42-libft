@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/18 15:41:12 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/21 19:28:56 by molahrac         ###   ########.fr       */
+/*   Created: 2025/10/21 20:08:22 by molahrac          #+#    #+#             */
+/*   Updated: 2025/10/21 23:21:06 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Fills the first 'len' bytes of memory at 'b' with the value 'c' */
-void	*ft_memset(void *b, int c, size_t len)
+/**
+ * @n : is limit of comparition  we will compare n of the s1 and s2
+ */
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t		i;
+	unsigned int	i;
 
 	i = 0;
-	while (i != len)
-	{
-		*(char *)(b + i) = (unsigned char)c;
+	while (i < n && s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
 		i++;
-	}
-	return (b);
+	if (n == i)
+		return (0);
+	else
+		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
