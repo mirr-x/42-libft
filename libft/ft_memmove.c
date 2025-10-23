@@ -6,7 +6,7 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 14:49:46 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/20 20:05:01 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/22 15:43:23 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,22 @@
  * no corption of data we start coppying from the last if addrs of dst > src 
  * see chart i made in /notes
  */
-void	*ft_memmove(void *dst, const void *src, size_t len)
-{
-	size_t		i;
 
-	i = len - 1;
-	if (dst > src)
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	unsigned char	*dest_ptr;
+	unsigned char	*src_ptr;
+
+	if (!dest && !src)
+		return (NULL);
+	dest_ptr = (unsigned char *) dest;
+	src_ptr = (unsigned char *) src;
+	if (dest_ptr > src_ptr)
 	{
-		while (i != -1)
-		{
-			*(char *)(dst + i) = *(char *)(src + i);
-			i--;
-		}
+		while (n-- > 0)
+			dest_ptr[n] = src_ptr[n];
 	}
 	else
-		ft_memcpy(dst, src, len);
-	return (dst);
+		return (ft_memcpy(dest, src, n));
+	return (dest);
 }

@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 23:24:09 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/22 13:13:47 by molahrac         ###   ########.fr       */
+/*   Created: 2025/10/22 01:05:12 by molahrac          #+#    #+#             */
+/*   Updated: 2025/10/22 13:14:58 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * Searches for the first occurrence of 'c' in the 
- * first 'n' bytes of 's'. Returns a pointer to the byte or NULL if not found.
+ * Locates the first occurrence of 'needle' in 'haystack' within 'len' bytes.
+ *  Returns a pointer to the start or NULL if not found
  */
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (i != n)
+	if (needle[0] == '\0')
+		return ((char *) haystack);
+	while (haystack[i] != '\0' && i < len)
 	{
-		if (*(unsigned char *)(s + i) == (unsigned char)c)
-			return ((unsigned char *)(s + i));
+		j = 0;
+		while (haystack[i + j] == needle[j] && i + j < len)
+		{
+			if (needle[j + 1] == '\0')
+				return ((char *) &haystack[i]);
+			j++;
+		}
 		i++;
 	}
-	return (NULL);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:42:00 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/21 23:47:18 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/22 15:51:20 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,35 @@
 
 # include <stdlib.h>
 
+/* CATEGORY 1: Character Check Functions (from <ctype.h>)*/
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
+
+/* CATEGORY 2: String & Memory Functions (from <string.h>) */
 size_t	ft_strlen(const char *s);
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
+void	*ft_memmove(void *dst, const void *src, size_t len);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
+
+/* CATEGORY 3: Case Conversion (from <ctype.h>) */
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+
+/* CATEGORY 4: Character & String Search (from <string.h>) */
 char	*ft_strchr(const char*s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+
+/* CATEGORY 5: String → Number Conversion (from <stdlib.h>) */
+int		ft_atoi(const char *str);
 
 #endif
