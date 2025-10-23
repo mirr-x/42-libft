@@ -6,12 +6,14 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:42:00 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/22 15:51:20 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/23 10:40:32 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# define MAX_UNSIGNED_LONG 18446744073709551615
 
 # include <stdlib.h>
 
