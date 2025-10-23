@@ -6,12 +6,11 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 13:16:24 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/23 10:47:12 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/23 10:49:39 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 /**
  * Converts the initial portion of the string 'str' to an integer,
