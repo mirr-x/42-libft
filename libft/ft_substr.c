@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/19 21:58:59 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/23 12:30:27 by molahrac         ###   ########.fr       */
+/*   Created: 2025/10/23 15:30:39 by molahrac          #+#    #+#             */
+/*   Updated: 2025/10/23 17:26:54 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Copies 'n' bytes from 'src' to 'dst'. Does nothing if both are NULL. */
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t		i;
-
-	i = 0;
-	if (dst == NULL && src == NULL)
+	if (s == NULL)
 		return (NULL);
-	while (i != n)
+	else if (start >= ft_strlen(s))
+		return (malloc(0))
+	
+
+	char	*ptr = (char *)malloc()
+	while (s[start] != '\0' && len != len != 0)
 	{
-		*(unsigned char *)(dst + i) = *(unsigned char *)(src + i);
-		i++;
+		/* code */
 	}
-	return (dst);
+
 }

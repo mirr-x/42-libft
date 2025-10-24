@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/19 21:58:59 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/23 12:30:27 by molahrac         ###   ########.fr       */
+/*   Created: 2025/10/23 12:17:38 by molahrac          #+#    #+#             */
+/*   Updated: 2025/10/23 16:06:50 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Copies 'n' bytes from 'src' to 'dst'. Does nothing if both are NULL. */
-void	*ft_memcpy(void *dst, const void *src, size_t n)
-{
-	size_t		i;
+/**
+ * Duplicates the string 's1' by allocating memory and copying its content.
+ *  Returns a pointer to the new string or NULL if allocation fails
+ */
 
-	i = 0;
-	if (dst == NULL && src == NULL)
+char	*ft_strdup(const char *s1)
+{
+	size_t	len_s1;
+	char	*ptr;
+
+	len_s1 = ft_strlen(s1);
+	ptr = (char *)malloc((len_s1 * sizeof(char)) + 1);
+	if (ptr == NULL)
 		return (NULL);
-	while (i != n)
-	{
-		*(unsigned char *)(dst + i) = *(unsigned char *)(src + i);
-		i++;
-	}
-	return (dst);
+	ft_memcpy(ptr, s1, len_s1 + 1);
+	return (ptr);
 }

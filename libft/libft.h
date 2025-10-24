@@ -6,7 +6,7 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:42:00 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/23 10:49:20 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/23 16:53:20 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 /* CATEGORY 5: String → Number Conversion (from <stdlib.h>) */
 int		ft_atoi(const char *str);
+void	*ft_calloc(size_t blockes, size_t size_each_block);
+char	*ft_strdup(const char *s1);
 
 #endif
