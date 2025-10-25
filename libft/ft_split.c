@@ -6,12 +6,12 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 19:14:18 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/24 22:06:45 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/25 10:15:51 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include <stdio.h>
 
 int	num_of_words(char const *s, char c)
 {
@@ -19,7 +19,9 @@ int	num_of_words(char const *s, char c)
 	int		wor;
 
 	i = 0;
-	wor = 1;
+	wor = 0;
+	if (s[0] != c)
+		wor++;
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
@@ -29,29 +31,19 @@ int	num_of_words(char const *s, char c)
 	return (wor);
 }
 
-int len_of_word(char *s, char c)
+char	*extract_word(char *s_strimed, char c, int *pos)
 {
-	int	len;
-
-	len = 0;
-	while (s[len] != c)
-		len++;
-	return (len);
-}
-
-void	copy_word_to_arr1d(char *dst, char *src, char c)
-{
-	int		i;
-
-	i = 0;
-	while (*src != c)
-	{
-		dst[i] = *src;
-		src++;
-		i++;
-	}
-	src++;
-	dst[i] = '\0';
+	int	size_word;
+	char word;
+	
+	size_word = 0;
+	while (s_strimed[*pos] != c && s_strimed[*pos] != '\0')
+		size_word++;
+	
+	*pos = *pos + size_word;
+	word = (char *)malloc(size_word + 1);
+	printf("%d\n", *pos);
+	
 }
 
 char	**ft_split(char const *s, char c)
@@ -68,19 +60,12 @@ char	**ft_split(char const *s, char c)
 	number_words = num_of_words(s_strimed, c);
 	arr2d = (char **)malloc(number_words * sizeof(char *) + 1);
 	i = 0;
-	pos = 0;
+	// pos = 0;
 	while (i != number_words)
 	{
-		len_wrd = len_of_word(s_strimed, c);
-		if (len_wrd != 0)
-		{
-			arr1d = (char *)malloc(len_wrd * sizeof(char) + 1);
-			copy_word_to_arr1d(arr1d, s_strimed, c);
-			arr2d[i] = arr1d;
-			i++;
-		}
-		else
-			return (NULL);
+		
+		arr2d[i] = extract_word(s_strimed, c, &pos);
+		i++;
 	}
 	return (arr2d);
 }
