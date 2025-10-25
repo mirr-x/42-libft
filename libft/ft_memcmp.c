@@ -6,7 +6,7 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 23:55:08 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/22 20:27:46 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/24 11:24:59 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		return (0);
 	return (*p1 - *p2);
 }
-// #include <stdio.h>
-// int main()
-// {
-// 	char s2[] = {0, 0, 127, 0};
-// 	char s3[] = {0, 0, 42, 0};
-
-// 	int x = ft_memcmp(s2, s3, 4);
-// 	printf("%d\n",x);
-// }
