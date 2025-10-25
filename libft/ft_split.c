@@ -6,85 +6,109 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 19:14:18 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/25 10:21:59 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/25 12:53:19 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int	num_of_words(char const *s, char c)
-{
-	int		i;
-	int		wor;
+static int g_index_of_strimed = 0;
 
-	i = 0;
-	wor = 0;
-	if (s[0] != c)
-		wor++;
-	while (s[i] != '\0')
+//+-------------count words
+int	count_words(char *s_trimed, char c)
+{
+	int i = 0;
+	int num_of_wrds = 0;
+	if(s_trimed[i] == '\0')
+		return (0);
+	if (s_trimed[0] != c)
 	{
-		if (s[i] == c)
-			wor++;
+		num_of_wrds++;
+	}
+	while (s_trimed[i] != '\0')
+	{
+		if (s_trimed[i] == c && s_trimed[i - 1] != c)
+			num_of_wrds++;
 		i++;
 	}
-	return (wor);
+	return (num_of_wrds);
+}
+char *extract_word(char *s_trimed, char c)
+{
+	int size = 0;
+	while (s_trimed[size] != '\0' && s_trimed[size] != c)
+		size++;
+	char *str = (char *)malloc(sizeof(char) * size + 1);
+	if (!str)
+		return (NULL);
+	int i = 0;
+	while (i != size)
+	{
+		str[i] = s_trimed[g_index_of_strimed];
+		i++;
+		g_index_of_strimed++;
+	}
+	str[i] = '\0';
+	if (s_trimed[g_index_of_strimed] == c)
+		g_index_of_strimed++;
+	return (str);
 }
 
-char	*extract_word(char *s_strimed, char c, int *pos)
+//+-------------do_all  "Hello mirr"
+void do_all(char **arr_of_words, int num_of_wrds, char *s_trimed, char c)
 {
-	int	size_word;
-	char *word;
-	int		i;
-	
-	size_word = 0;
-	while (s_strimed[*pos] != c && s_strimed[*pos] != '\0')
-		size_word++;
-	
-	*pos = *pos + size_word;
-	word = (char *)malloc(size_word + 1);
-	printf("%d\n", *pos);
-	i = 0;
-	while (i != size_word)
+	int i = 0;
+	while (i != num_of_wrds)
 	{
-		word[i] = s_strimed[i];
+		char *te = extract_word(s_trimed, c);
+		arr_of_words[i] = te;
+		printf("im in do_all__%s___\n", te);
 		i++;
 	}
-	word[i] = '\0';
-	return (word);
+	arr_of_words[i] = NULL;
 }
 
+//+-------------split
 char	**ft_split(char const *s, char c)
 {
-	char	*s_strimed;
-	int		number_words;
-	char	**arr2d;
-	int		len_wrd;
-	int		pos;
-	int		i;
+	char	*s_trimed;
+	char	seprator[2];
 
-	s_strimed = ft_strtrim(s, " "); //!malloc
-	number_words = num_of_words(s_strimed, c);
-	arr2d = (char **)malloc(number_words * sizeof(char *) + 1);
-	i = 0;
-	pos = 0;
-	while (i != number_words)
-	{
-		
-		arr2d[i] = extract_word(s_strimed, c, &pos);
-		i++;
-	}
-	arr2d[i] = NULL;
-	return (arr2d);
+	seprator[0] = c;
+	seprator[1] = '\0';
+	s_trimed = ft_strtrim(s, seprator);
+	printf("__%s__\n", s_trimed); //@test ft_strtrim
+
+	int num_of_wrds = count_words(s_trimed, c);
+	printf("%d\n", num_of_wrds);  //@test ft_word
+
+	char **arr_of_words = (char **)malloc(num_of_wrds * sizeof(char *) + 1);
+	if (!arr_of_words)
+		return (NULL);
+	
+	
+	do_all(arr_of_words, num_of_wrds, s_trimed, c);
+
+	
+	return (NULL);
 }
 
-#include <stdio.h>
+//+-------------main
+
 int main()
 {
-	char **buffer;
-	buffer = ft_split("mohamed reda", ' ');
-	printf("%s\n", buffer[0]);
-	printf("%s\n", buffer[1]);
-	printf("%s\n", buffer[2]);
-	return (0);
+	char *s = "  Hello mirr  ";
+	char c = ' ';
+	char **arr_of_words = ft_split(s, c);
+
+	int i = 0;
+	while (arr_of_words != NULL)
+	{
+		printf("%s\n",arr_of_words[i]);
+		free(arr_of_words[i]);
+		i++;
+	}
+	free(arr_of_words);
+	return(0);
 }
