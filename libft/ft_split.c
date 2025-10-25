@@ -6,7 +6,7 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 19:14:18 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/25 10:15:51 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/25 10:21:59 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ int	num_of_words(char const *s, char c)
 char	*extract_word(char *s_strimed, char c, int *pos)
 {
 	int	size_word;
-	char word;
+	char *word;
+	int		i;
 	
 	size_word = 0;
 	while (s_strimed[*pos] != c && s_strimed[*pos] != '\0')
@@ -43,7 +44,14 @@ char	*extract_word(char *s_strimed, char c, int *pos)
 	*pos = *pos + size_word;
 	word = (char *)malloc(size_word + 1);
 	printf("%d\n", *pos);
-	
+	i = 0;
+	while (i != size_word)
+	{
+		word[i] = s_strimed[i];
+		i++;
+	}
+	word[i] = '\0';
+	return (word);
 }
 
 char	**ft_split(char const *s, char c)
@@ -51,7 +59,6 @@ char	**ft_split(char const *s, char c)
 	char	*s_strimed;
 	int		number_words;
 	char	**arr2d;
-	char	*arr1d;
 	int		len_wrd;
 	int		pos;
 	int		i;
@@ -60,13 +67,14 @@ char	**ft_split(char const *s, char c)
 	number_words = num_of_words(s_strimed, c);
 	arr2d = (char **)malloc(number_words * sizeof(char *) + 1);
 	i = 0;
-	// pos = 0;
+	pos = 0;
 	while (i != number_words)
 	{
 		
 		arr2d[i] = extract_word(s_strimed, c, &pos);
 		i++;
 	}
+	arr2d[i] = NULL;
 	return (arr2d);
 }
 
