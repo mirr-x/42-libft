@@ -6,109 +6,118 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 19:14:18 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/25 12:53:19 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/26 01:29:24 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-static int g_index_of_strimed = 0;
-
 //+-------------count words
-int	count_words(char *s_trimed, char c)
+int	count_words(char const *s, char c)
 {
-	int i = 0;
-	int num_of_wrds = 0;
-	if(s_trimed[i] == '\0')
-		return (0);
-	if (s_trimed[0] != c)
+	int	i;
+	int	counter;
+
+	i = 0;
+	counter = 0;
+	while (s[i] != '\0')
 	{
-		num_of_wrds++;
+		if (s[i] != c)
+		{
+			counter++; //@we found a word
+			while (s[i] != c && s[i] != '\0')
+				i++;
+		}
+		else
+			i++;
 	}
-	while (s_trimed[i] != '\0')
-	{
-		if (s_trimed[i] == c && s_trimed[i - 1] != c)
-			num_of_wrds++;
-		i++;
-	}
-	return (num_of_wrds);
-}
-char *extract_word(char *s_trimed, char c)
-{
-	int size = 0;
-	while (s_trimed[size] != '\0' && s_trimed[size] != c)
-		size++;
-	char *str = (char *)malloc(sizeof(char) * size + 1);
-	if (!str)
-		return (NULL);
-	int i = 0;
-	while (i != size)
-	{
-		str[i] = s_trimed[g_index_of_strimed];
-		i++;
-		g_index_of_strimed++;
-	}
-	str[i] = '\0';
-	if (s_trimed[g_index_of_strimed] == c)
-		g_index_of_strimed++;
-	return (str);
+	return (counter);
 }
 
-//+-------------do_all  "Hello mirr"
-void do_all(char **arr_of_words, int num_of_wrds, char *s_trimed, char c)
+//+------free the remian case of failing
+void	free_the_remain(char **arr2d, int num)
 {
-	int i = 0;
-	while (i != num_of_wrds)
+	int		i;
+
+	i = 0;
+	while (i != num)
 	{
-		char *te = extract_word(s_trimed, c);
-		arr_of_words[i] = te;
-		printf("im in do_all__%s___\n", te);
+		free(arr2d[i]);
 		i++;
 	}
-	arr_of_words[i] = NULL;
+	free(arr2d);
 }
 
-//+-------------split
+//+--------------extact words and copy them to the 2d arr
+char **extact_words_and_copy_them_to_the_2d_arr(char **arr2d, char const *s, char c, int num_of_words)
+{
+	int		i;
+	int		j;
+	int		start;
+	int		end;
+
+	i = 0;
+	j = 0;
+	while (num_of_words != i && s[j] != '\0')
+	{
+		
+		while (s[j] == c)
+			j++;
+		start = j;
+		while (s[j] != c && s[j] != '\0')
+			j++;
+		end = j;
+		// printf("s = %d and e = %d\n",start, end);
+		arr2d[i] = ft_substr(s, start, end - start);
+		if (arr2d[i] == NULL) // !fail
+		{
+			free_the_remain(arr2d, i);
+			return (NULL);
+		}
+		// printf("____%s___\n",arr2d[i]);
+		i++;
+	}
+	return (arr2d);
+}
+
+	//+-------------split
 char	**ft_split(char const *s, char c)
 {
-	char	*s_trimed;
-	char	seprator[2];
+	int		num_of_words;
+	char	**arr_of_words;
 
-	seprator[0] = c;
-	seprator[1] = '\0';
-	s_trimed = ft_strtrim(s, seprator);
-	printf("__%s__\n", s_trimed); //@test ft_strtrim
-
-	int num_of_wrds = count_words(s_trimed, c);
-	printf("%d\n", num_of_wrds);  //@test ft_word
-
-	char **arr_of_words = (char **)malloc(num_of_wrds * sizeof(char *) + 1);
-	if (!arr_of_words)
+	num_of_words = count_words(s, c);
+	// if (num_of_words == 0) // !fails
+	// 	return (malloc(1));
+	arr_of_words = (char **)malloc(((num_of_words + 1) * sizeof(char *)));
+	if(!arr_of_words) // !fails
 		return (NULL);
-	
-	
-	do_all(arr_of_words, num_of_wrds, s_trimed, c);
-
-	
-	return (NULL);
+	arr_of_words[num_of_words] = NULL;
+	if (!extact_words_and_copy_them_to_the_2d_arr(arr_of_words, s, c, num_of_words))
+		return (NULL);
+	return (arr_of_words);
 }
+// !!hello!!!!!!!!!!"  s = 2  e = 6   len = 9 
+// //+-------------main
 
-//+-------------main
-
-int main()
-{
-	char *s = "  Hello mirr  ";
-	char c = ' ';
-	char **arr_of_words = ft_split(s, c);
-
-	int i = 0;
-	while (arr_of_words != NULL)
-	{
-		printf("%s\n",arr_of_words[i]);
-		free(arr_of_words[i]);
-		i++;
-	}
-	free(arr_of_words);
-	return(0);
-}
+// int main()
+// {
+// 	char *s = "          ";
+// 	char c = ' ';
+// 	char **arr_of_words = ft_split(s, c);
+// 	if (!arr_of_words)
+// 		return (0);
+// 	int i = 0;
+// 	if (arr_of_words != NULL)
+// 	{
+// 		while (arr_of_words[i] != NULL)
+// 		{
+// 			printf("_%s_\n",arr_of_words[i]);
+// 			free(arr_of_words[i]);
+// 			i++;
+// 		}
+// 		free(arr_of_words);
+// 	}
+// 	return(0);
+// }
