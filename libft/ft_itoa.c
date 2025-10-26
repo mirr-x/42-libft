@@ -1,0 +1,68 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/26 10:28:28 by molahrac          #+#    #+#             */
+/*   Updated: 2025/10/26 13:16:55 by molahrac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+int	ft_intlen(long n)
+{
+	int		len;
+
+	len = 0;
+	if (n < 0)
+	{
+		len++;
+		n *= -1;
+	}
+	if (n == 0)
+		len++;
+	while (n != 0)
+	{
+		n = n / 10;
+		len++;
+	}
+	return (len);
+}
+
+void	rec(char *arr, long num, int last_idx)
+{
+	if (num == 0)
+		return ;
+	rec(arr, num / 10, last_idx - 1);
+	arr[last_idx] = (num % 10) + '0';
+	return ;
+}
+
+char	*ft_itoa(int n)
+{
+	int		len_num;
+	char	*arr;
+	long	num;
+
+	num = n;
+	len_num = ft_intlen(num);
+	arr = (char *)malloc((len_num + 1) * sizeof(char));
+	if (!arr)
+		return (NULL);
+	arr[len_num] = '\0';
+	if (num == 0)
+	{
+		arr[0] = '0';
+		return (arr);
+	}
+	else if (num < 0)
+	{
+		num *= -1;
+		arr[0] = '-';
+	}
+	rec(arr, num, len_num - 1);
+	return (arr);
+}
