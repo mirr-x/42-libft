@@ -6,7 +6,7 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:42:00 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/26 18:28:46 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/28 08:26:17 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 /* ______________________INCLUDES_____________________*/
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h>
 
 /* ______________________FUNCTIONS_____________________*/
 /* CATEGORY 1: Character Check Functions (from <ctype.h>)*/
@@ -62,5 +63,7 @@ char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
 
 #endif
