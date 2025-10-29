@@ -6,7 +6,7 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 09:51:30 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/23 17:35:11 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/28 15:53:27 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,15 @@
  */
 void	*ft_calloc(size_t nblockes, size_t size_each)
 {
-	void	*ptr;
+	unsigned char	*s;
+	size_t			total;
 
-	if (nblockes == 0 || size_each == 0)
-		return (malloc(1));
-	ptr = malloc(nblockes * size_each);
-	if (ptr == NULL)
+	total = nblockes * size_each;
+	if (nblockes != 0 && size_each != 0 && (total / nblockes) != size_each)
 		return (NULL);
-	ft_bzero(ptr, nblockes * size_each);
-	return (ptr);
+	s = malloc(nblockes * size_each);
+	if (!s)
+		return (NULL);
+	ft_memset(s, 0, nblockes * size_each);
+	return (s);
 }
