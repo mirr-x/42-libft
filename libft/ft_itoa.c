@@ -6,7 +6,7 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 10:28:28 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/26 13:16:55 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/28 15:11:35 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_intlen(long n)
 {
-	int		len;
+	int	len;
 
 	len = 0;
 	if (n < 0)
@@ -32,13 +32,23 @@ int	ft_intlen(long n)
 	return (len);
 }
 
-void	rec(char *arr, long num, int last_idx)
+void	recx(char *arr, long num, int len_num)
 {
-	if (num == 0)
-		return ;
-	rec(arr, num / 10, last_idx - 1);
-	arr[last_idx] = (num % 10) + '0';
-	return ;
+	int	x;
+
+	x = -1;
+	if (num < 0)
+	{
+		num *= -1;
+		arr[0] = '-';
+		x = 0;
+	}
+	while (len_num != x)
+	{
+		arr[len_num] = (num % 10) + '0';
+		num /= 10;
+		len_num--;
+	}
 }
 
 char	*ft_itoa(int n)
@@ -58,11 +68,6 @@ char	*ft_itoa(int n)
 		arr[0] = '0';
 		return (arr);
 	}
-	else if (num < 0)
-	{
-		num *= -1;
-		arr[0] = '-';
-	}
-	rec(arr, num, len_num - 1);
+	recx(arr, num, len_num - 1);
 	return (arr);
 }
