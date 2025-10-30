@@ -6,7 +6,7 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 12:17:38 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/23 16:06:50 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/29 12:05:10 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
  * Duplicates the string 's1' by allocating memory and copying its content.
  *  Returns a pointer to the new string or NULL if allocation fails
  */
-
 char	*ft_strdup(const char *s1)
 {
 	size_t	len_s1;

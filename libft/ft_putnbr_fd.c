@@ -6,7 +6,7 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 10:29:35 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/28 15:10:32 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/29 12:06:14 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	rec(long n, int fd)
 	return ;
 }
 
+/* Outputs the integer 'n' to the given file descriptor 'fd'. */
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == 0)

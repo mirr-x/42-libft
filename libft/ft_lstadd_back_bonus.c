@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 08:27:47 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/29 12:07:29 by molahrac         ###   ########.fr       */
+/*   Created: 2025/10/29 11:56:25 by molahrac          #+#    #+#             */
+/*   Updated: 2025/10/29 14:43:22 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+/* add node to the last of LD */
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	ft_putstr_fd(s, fd);
-	write(fd, "\n", 1);
+	t_list	*head;
+
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	head = *lst;
+	while (head->next != NULL)
+		head = head->next;
+	head->next = new;
 }

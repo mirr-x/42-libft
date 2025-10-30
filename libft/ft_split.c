@@ -6,7 +6,7 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 19:14:18 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/26 10:26:14 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/29 12:05:34 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,9 @@ char	**extact_wrds_to_2d_arr(char **arr2d, char const *s, char c, int n_wrds)
 	return (arr2d);
 }
 
+/**
+ * Splits the string 's' into an array of words, using the delimiter 'c
+ */
 char	**ft_split(char const *s, char c)
 {
 	int		num_of_words;

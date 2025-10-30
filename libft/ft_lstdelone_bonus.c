@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 08:27:47 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/29 12:07:29 by molahrac         ###   ########.fr       */
+/*   Created: 2025/10/29 13:55:52 by molahrac          #+#    #+#             */
+/*   Updated: 2025/10/29 14:42:05 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+/* delete single node and use func pointer to delet content */
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	ft_putstr_fd(s, fd);
-	write(fd, "\n", 1);
+	if (!lst || !del)
+		return ;
+	del(lst->content);
+	free(lst);
 }

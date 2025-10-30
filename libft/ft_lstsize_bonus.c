@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 08:27:47 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/29 12:07:29 by molahrac         ###   ########.fr       */
+/*   Created: 2025/10/29 11:47:04 by molahrac          #+#    #+#             */
+/*   Updated: 2025/10/29 12:08:03 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+/* linkedList size */
+int	ft_lstsize(t_list *lst)
 {
-	ft_putstr_fd(s, fd);
-	write(fd, "\n", 1);
+	int		i;
+
+	i = 0;
+	while (lst != NULL)
+	{
+		i++;
+		lst = lst->next;
+	}
+	return (i);
 }

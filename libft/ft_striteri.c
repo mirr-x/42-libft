@@ -6,12 +6,16 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 18:06:35 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/26 18:22:59 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/29 12:05:00 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Applies function 'f' to each character of string 's', 
+ * passing its index as the first argument.
+ */
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;

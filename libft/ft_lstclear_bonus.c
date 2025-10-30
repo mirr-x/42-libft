@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 08:27:47 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/29 12:07:29 by molahrac         ###   ########.fr       */
+/*   Created: 2025/10/29 14:13:53 by molahrac          #+#    #+#             */
+/*   Updated: 2025/10/29 14:42:41 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+/* clear the full LinkedList */
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	ft_putstr_fd(s, fd);
-	write(fd, "\n", 1);
+	t_list	*head;
+	t_list	*tmp;
+
+	head = *lst;
+	while (head != NULL)
+	{
+		tmp = head;
+		head = head->next;
+		del(tmp->content);
+		free(tmp);
+	}
+	*lst = NULL;
 }
