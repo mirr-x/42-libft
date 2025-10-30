@@ -1,7 +1,8 @@
+NAME = libft.a
+
 CC = cc
 CFLAGS = -Wextra -Wall -Werror
 
-NAME = libft.a
 OBJ = $(SRC:.c=.o)
 AR = ar crs
 
@@ -36,3 +37,5 @@ re: fclean all
 
 bonus: $(OBJ_BONUS)
 	$(AR) $(NAME) $(OBJ_BONUS)
+
+.PHONY:  clean fclean 
