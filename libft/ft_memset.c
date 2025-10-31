@@ -6,13 +6,15 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:41:12 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/26 14:27:36 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/31 09:44:22 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Fills the first 'len' bytes of memory at 'b' with the value 'c' */
+/* Fills the first 'len' bytes of memory at 'b' with the value 'c'
+((char *)&n) + 1
+*/
 void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	*memory;
