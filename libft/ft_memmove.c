@@ -6,7 +6,7 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 14:49:46 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/23 17:26:43 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/31 10:22:35 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		return (ft_memcpy(dest, src, n));
 	return (dest);
 }
+/*
+s = hello
+src = s => hello /// dst = s + 2 => llo  n = 3
+hello => hello
+*/

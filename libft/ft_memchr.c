@@ -6,16 +6,13 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 23:24:09 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/22 13:13:47 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/31 09:32:46 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/**
- * Searches for the first occurrence of 'c' in the 
- * first 'n' bytes of 's'. Returns a pointer to the byte or NULL if not found.
- */
+/* find the first 'c' in 'n' bytes of 's'. Returns a pointer to the byte */
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
