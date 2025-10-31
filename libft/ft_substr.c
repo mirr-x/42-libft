@@ -6,7 +6,7 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 15:30:39 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/24 11:49:40 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/31 11:45:16 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 #include <stdio.h>
 
 /**
- * Creates a substring from 's', starting at 'start' and taking up to 'len' 
+ * extract a substring from 's', starting at 'start' into the 'len' 
  * characters.
- * Returns the new substring or an empty string if 'start' is out of bounds.
  */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

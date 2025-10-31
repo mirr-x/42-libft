@@ -6,7 +6,7 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 10:28:04 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/30 12:34:08 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/31 11:49:38 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	copy_src_to_dst(char const *src, char *dst, size_t *i)
 
 /**
  * Joins 's1' and 's2' into a new string. 
- * Returns the new string or NULL if memory fails.
  */
 char	*ft_strjoin(char const *s1, char const *s2)
 {

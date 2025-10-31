@@ -6,7 +6,7 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 19:14:18 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/29 12:05:34 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/31 12:06:21 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,25 +31,6 @@ int	count_words(char const *s, char c)
 			i++;
 	}
 	return (counter);
-}
-
-char	*ft_substrr(char const *str, int start, int end)
-{
-	char	*ptr;
-	int		s_len;
-	int		i;
-
-	s_len = end - start + 1;
-	ptr = (char *)malloc(s_len + 1);
-	if (!ptr)
-		return (NULL);
-	i = 0;
-	while (i != s_len)
-	{
-		ptr[i++] = str[start++];
-	}
-	ptr[i] = '\0';
-	return (ptr);
 }
 
 void	free_the_remain(char **arr2d, int num)
@@ -78,8 +59,8 @@ char	**extact_wrds_to_2d_arr(char **arr2d, char const *s, char c, int n_wrds)
 		start = j;
 		while (s[j] != c && s[j] != '\0')
 			j++;
-		end = j - 1;
-		arr2d[i] = ft_substrr(s, start, end);
+		end = j;
+		arr2d[i] = ft_substr(s, start, end - start);
 		if (arr2d[i] == NULL)
 		{
 			free_the_remain(arr2d, i);
