@@ -6,7 +6,7 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 20:31:13 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/21 13:37:26 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/31 10:13:52 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,4 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[lendst + i] = '\0';
 	return (total_size);
 }
+// |H| J| P| /0| | | | | | | |  | <- dst

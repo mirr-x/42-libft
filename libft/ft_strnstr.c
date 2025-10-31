@@ -6,14 +6,14 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 01:05:12 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/22 13:14:58 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/31 10:40:54 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * Locates the first occurrence of 'needle' in 'haystack' within 'len' bytes.
+ * Locates the first occurrence of 'needle' in len 'haystack' within 'len' bytes.
  *  Returns a pointer to the start or NULL if not found
  */
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
