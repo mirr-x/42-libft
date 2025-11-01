@@ -6,18 +6,13 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 13:16:24 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/23 10:49:39 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/31 18:06:16 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/**
- * Converts the initial portion of the string 'str' to an integer,
- *  skipping whitespace and handling signs
- * !from 9 to 13   we have ‘ ’ , \f , \n , \r , \t , \v  |  32 is space
- */
-
+/* Converts the initial portion of the string 'str' to an integer */
 void	skip_spacese(const char *str, size_t *i)
 {
 	while ((str[*i] >= 9 && str[*i] <= 13) || str[*i] == 32)
