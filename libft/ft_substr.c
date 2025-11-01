@@ -6,12 +6,11 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 15:30:39 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/31 11:45:16 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/10/31 22:38:54 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 /**
  * extract a substring from 's', starting at 'start' into the 'len' 

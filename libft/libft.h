@@ -6,7 +6,7 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:42:00 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/31 10:37:23 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/11/01 15:09:57 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 /* ______________________DEFINES_____________________*/
 # define LIBFT_H
-# define MAX_UNSIGNED_LONG 18446744073709551615
 
 /* ______________________INCLUDES_____________________*/
 # include <stdlib.h>
 # include <unistd.h>
-# include <fcntl.h>
 
 /* ______________________STRUCTERS_____________________*/
 typedef struct s_list

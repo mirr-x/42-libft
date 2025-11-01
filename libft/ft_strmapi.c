@@ -6,7 +6,7 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 14:44:51 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/29 13:12:35 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/11/01 14:22:12 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*ptr;
 	size_t	i;
 
+	if (!s)
+		return (NULL);
 	s_len = ft_strlen(s);
 	ptr = (char *)malloc((s_len + 1) * sizeof(char));
 	if (!ptr)
