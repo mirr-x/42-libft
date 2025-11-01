@@ -6,19 +6,13 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 14:49:46 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/31 10:22:35 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/11/01 13:00:51 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/**
- * Safely copies 'len' bytes from 'src' to 'dst', 
- * even if they overlap not like memcpy
- * no corption of data we start coppying from the last if addrs of dst > src 
- * see chart i made in /notes
- */
-
+/* Safely copies 'len' bytes from 'src' to 'dst' handle overlap */
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char	*dest_ptr;
@@ -40,8 +34,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		return (ft_memcpy(dest, src, n));
 	return (dest);
 }
-/*
-s = hello
-src = s => hello /// dst = s + 2 => llo  n = 3
-hello => hello
-*/

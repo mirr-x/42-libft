@@ -6,7 +6,7 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 10:29:35 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/31 11:51:03 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/11/01 13:34:50 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	rec(long n, int fd)
 	rec(n / 10, fd);
 	c = (n % 10) + '0';
 	write(fd, &c, 1);
-	return ;
 }
 
 /* Outputs the integer 'n' to the given file descriptor 'fd'. */
