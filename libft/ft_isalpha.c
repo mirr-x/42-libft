@@ -6,7 +6,7 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:27:12 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/20 20:00:09 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/11/01 13:18:01 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /* Checks if 'c' is an alphabetic character (uppercase or lowercase) */
 int	ft_isalpha(int c)
 {
-	if ((c >= 65 && c <= 90) || ((c >= 97 && c <= 122)))
+	if ((c >= 'a' && c <= 'z') || ((c >= 'A' && c <= 'Z')))
 		return (1);
 	return (0);
 }
