@@ -6,12 +6,11 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 11:59:00 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/24 20:16:51 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/11/01 18:36:31 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	c_is_set(char c, char *set)
 {

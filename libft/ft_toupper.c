@@ -6,11 +6,9 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 13:28:46 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/21 13:35:57 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/11/01 18:37:37 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_toupper(int c)
 {
