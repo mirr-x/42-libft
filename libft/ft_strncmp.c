@@ -6,11 +6,11 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 20:08:22 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/21 23:21:06 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/11/01 18:36:03 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 /**
  * @n : is limit of comparition  we will compare n of the s1 and s2

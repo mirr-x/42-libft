@@ -6,11 +6,11 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 13:41:11 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/31 18:12:52 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/11/01 18:33:47 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 /* Finds the first 'c' in the string 's', including '\0' */
 char	*ft_strchr(const char *s, int c)

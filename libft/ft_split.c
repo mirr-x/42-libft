@@ -6,7 +6,7 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 19:14:18 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/31 12:06:21 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/11/01 18:33:36 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ char	**ft_split(char const *s, char c)
 	int		num_of_words;
 	char	**arr_of_words;
 
+	if (!s)
+		return (NULL);
 	num_of_words = count_words(s, c);
 	arr_of_words = (char **)malloc(((num_of_words + 1) * sizeof(char *)));
 	if (!arr_of_words)
