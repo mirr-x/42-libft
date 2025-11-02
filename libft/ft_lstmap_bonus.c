@@ -6,7 +6,7 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:40:15 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/29 23:10:29 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/11/01 18:25:21 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*cur;
 	t_list	*head;
 
-	if (!lst)
+	if (!lst || !f || !del)
 		return (NULL);
 	head = create_node(lst->content, f, del);
 	if (!head)

@@ -6,11 +6,11 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 23:55:08 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/31 09:31:19 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/11/01 18:31:45 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 /* Compares the first 'n' bytes of 's1' and 's2' */
 int	ft_memcmp(const void *s1, const void *s2, size_t n)

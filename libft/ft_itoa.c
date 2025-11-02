@@ -6,11 +6,11 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 10:28:28 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/28 15:11:35 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/11/01 18:29:15 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 int	ft_intlen(long n)
 {
