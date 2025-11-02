@@ -6,11 +6,11 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 13:16:24 by molahrac          #+#    #+#             */
-/*   Updated: 2025/11/01 18:33:21 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/11/02 12:51:47 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 /* Converts the initial portion of the string 'str' to an integer */
 void	skip_spacese(const char *str, size_t *i)
@@ -51,3 +51,4 @@ int	ft_atoi(const char *str)
 	rus = rus * xsign;
 	return (rus);
 }
+//@todo fix over flow text max in and max long and hanel it

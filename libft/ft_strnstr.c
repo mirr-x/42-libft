@@ -6,11 +6,11 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 01:05:12 by molahrac          #+#    #+#             */
-/*   Updated: 2025/11/01 18:36:11 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/11/02 12:53:47 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 /**
  * Locates the first occurrence of 'needle' in len 'haystack' within 'len' bytes.
