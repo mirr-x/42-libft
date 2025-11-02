@@ -6,7 +6,7 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 13:16:24 by molahrac          #+#    #+#             */
-/*   Updated: 2025/11/02 12:51:47 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/11/02 14:28:44 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void	check_sign(const char *str, size_t *i, int *xsign)
 
 int	ft_atoi(const char *str)
 {
-	size_t	i;
-	int		rus;
-	int		xsign;
+	size_t		i;
+	long long	rus;
+	int			xsign;
 
 	i = 0;
 	rus = 0;
@@ -44,6 +44,13 @@ int	ft_atoi(const char *str)
 	check_sign(str, &i, &xsign);
 	while (str[i] >= '0' && str[i] <= '9')
 	{
+		if (rus * 10 + (str[i] - '0') < rus)
+		{
+			if (xsign == 1)
+				return (-1);
+			if (xsign == -1)
+				return (0);
+		}
 		rus *= 10;
 		rus += (str[i] - '0');
 		i++;
@@ -51,4 +58,3 @@ int	ft_atoi(const char *str)
 	rus = rus * xsign;
 	return (rus);
 }
-//@todo fix over flow text max in and max long and hanel it
