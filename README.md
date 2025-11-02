@@ -1,6 +1,6 @@
 ![Libft Banner](https://github.com/mirr-x/42-CC-1337/blob/main/images/github_piscine_and_common_core_banner_libft.png)
 
-# libft — My libft Journey
+# libft - My libft Journey
 
 A concise, practical libft built by implementing the standard C helpers from scratch. This repo is a learning diary: clear code, small tests, and notes about edge cases and memory handling.
 
@@ -9,7 +9,7 @@ A concise, practical libft built by implementing the standard C helpers from scr
 | Topic | Description |
 |---|---|
 | Project | The first project at 42: implement standard C functions from scratch and create a personal library used in later projects. |
-| Philosophy | Implement, test, and understand — don’t copy-paste. The learning is in writing and debugging the code yourself. |
+| Philosophy | Implement, test, and understand - don’t copy-paste. The learning is in writing and debugging the code yourself. |
 
 ## HOW TO USE
 
