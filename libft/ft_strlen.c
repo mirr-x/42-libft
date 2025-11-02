@@ -6,11 +6,11 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 13:49:12 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/30 17:45:43 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/11/01 18:35:47 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 size_t	ft_strlen(const char *s)
 {

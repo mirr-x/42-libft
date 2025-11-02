@@ -6,11 +6,11 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 19:32:34 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/31 11:30:13 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/11/01 18:36:19 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 /* Finds the last 'c' in the string 's', including '\0'. */
 char	*ft_strrchr(const char *s, int c)
