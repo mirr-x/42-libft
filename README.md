@@ -6,29 +6,39 @@ A concise, practical libft built by implementing the standard C helpers from scr
 
 ## ABOUT
 
-| Topic | Description |
-|---|---|
-| Project | The first project at 42: implement standard C functions from scratch and create a personal library used in later projects. |
-| Philosophy | Implement, test, and understand - don’t copy-paste. The learning is in writing and debugging the code yourself. |
+The first project at 42, libft, involves learning how the standard functions of C programming work by writing them from scratch and creating a personal library. This project is vital because the library will be reused in later 42 projects.
+
+If you're a 42 student, implement and test the functions yourself instead of copy‑pasting. Be patient and thorough > the learning is in the doing.
 
 ## HOW TO USE
 
-| Step | Command / Notes |
-|---:|---|
-| 1 | Clone the repository: `git clone git@github.com:mirr-x/42-libft.git` |
-| 2 | Enter the project folder and run `make`: `cd 42-libft && make` |
-| 3 | Include the header in your code: `#include "libft.h"` |
+1º - Clone the repository
+
+```bash
+git clone git@github.com:mirr-x/42-libft.git
+```
+
+2º - Enter the project folder and run make
+
+```bash
+cd 42-libft
+make
+```
+
+3º - To use in your code, include the header
+
+```c
+#include "libft.h"
+```
 
 ## MAKEFILE RULES
 
-| Rule | What it does |
-|---|---|
-| `make` | Compile libft mandatory files |
-| `make bonus` | Compile libft bonus files |
-| `make all` | Compile mandatory + bonus files |
-| `make clean` | Remove all `.o` object files |
-| `make fclean` | Remove `.o` files and the `libft.a` archive |
-| `make re` | Run `fclean` then `all` |
+- `make` > Compile libft mandatory files.
+- `make bonus` > Compile libft bonus files.
+- `make all` > Compile mandatory + bonus files.
+- `make clean` > Delete all `.o` (object) files.
+- `make fclean` > Delete `.o` and `libft.a` files.
+- `make re` > `fclean` then `all`.
 
 ## MANDATORY
 
