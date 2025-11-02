@@ -6,11 +6,9 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 18:42:00 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/17 20:19:45 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/11/01 18:28:28 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isdigit(int c)
 {
