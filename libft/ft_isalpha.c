@@ -6,11 +6,9 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:27:12 by molahrac          #+#    #+#             */
-/*   Updated: 2025/11/01 13:18:01 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/11/01 21:08:43 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 /* Checks if 'c' is an alphabetic character (uppercase or lowercase) */
 int	ft_isalpha(int c)
