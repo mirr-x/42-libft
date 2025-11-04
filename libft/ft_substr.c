@@ -6,7 +6,7 @@
 /*   By: molahrac <molahrac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 15:30:39 by molahrac          #+#    #+#             */
-/*   Updated: 2025/10/31 22:38:54 by molahrac         ###   ########.fr       */
+/*   Updated: 2025/11/04 09:36:09 by molahrac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (ptr == NULL)
 		return (NULL);
 	i = 0;
-	while (s[start] != '\0' && i < len)
+	while (i < len && s[start] != '\0')
 		ptr[i++] = s[start++];
 	ptr[i] = '\0';
 	return (ptr);

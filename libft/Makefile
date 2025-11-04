@@ -6,6 +6,8 @@ CFLAGS = -Wextra -Wall -Werror
 OBJ = $(SRC:.c=.o)
 AR = ar rs
 
+BONUS_FILE = .bonus
+
 SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	 ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_strlcpy.c ft_strlcat.c \
 	 ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c \
@@ -27,15 +29,19 @@ $(NAME): $(OBJ)
 %.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
+bonus: $(BONUS_FILE)
+
+$(BONUS_FILE): $(OBJ_BONUS)
+	$(AR) $(NAME) $(OBJ_BONUS)
+	@touch $(BONUS_FILE)
+
 clean:
-	rm -f $(OBJ) $(OBJ_BONUS)
+	rm -f $(OBJ) $(OBJ_BONUS) $(BONUS_FILE)
 
 fclean:
-	rm -f $(OBJ) $(NAME) $(OBJ_BONUS)
+	rm -f $(OBJ) $(NAME) $(OBJ_BONUS) $(BONUS_FILE)
 
 re: fclean all
 
-bonus: $(OBJ_BONUS)
-	$(AR) $(NAME) $(OBJ_BONUS)
 
 .PHONY: clean fclean
