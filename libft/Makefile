@@ -4,7 +4,7 @@ CC = cc
 CFLAGS = -Wextra -Wall -Werror
 
 OBJ = $(SRC:.c=.o)
-AR = ar rs
+AR = ar crs
 
 BONUS_FILE = .bonus
 
