@@ -1,6 +1,6 @@
 ![Libft Banner](https://github.com/mirr-x/42-CC-1337/blob/main/images/github_piscine_and_common_core_banner_libft.png)
 
-# libft - My libft Journey
+# libft -> My libft Journey
 
 A concise, practical libft built by implementing the standard C helpers from scratch. This repo is a learning diary: clear code, small tests, and notes about edge cases and memory handling.
 
